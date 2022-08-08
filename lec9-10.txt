@@ -1,0 +1,40 @@
+LECTURE 9 FIREWALL
+
+3. Explain what Network Address Translation is and how it works.
+	- is a method of mapping an IP address space into another by modifying 
+	network address information in the IP header of packets while they are 
+	in transit across a traffic routing device
+	
+	- Since private IP addresses cannot be routed in public networks
+	- When a packet come to C from A or B, the IP address of A or B is replaced 
+	by the public IP of C (N)
+	- Packet is then transfer to D or E, what they would see is the address N, 
+	and reply to N
+	- When the packet arrive at C as N, the packet is somehow determine whether 
+	the traffic is meant to be for A or for B and how to then replace the public 
+	address by A's or B's private address
+	- It is not enough to only translate IP addresses: there must also be 
+	a translation of port number
+
+LECTURE 10 VPN
+
+1. 
+**VPN**
+	- A virtual private network allows to run a secure seemingly direct point to point 
+	connection between two stations, similar to a direct line between 2 stations. 
+	By using (potentially) an unsecured network such as the internet. Can be realized 
+	in software as well as hardwell. VPN is like a lease private line between 2 stations, 
+	but actually a unsecured connection on the internet which emulates this.
+	- VPN does not have high availability, but there are means of ensuring the 
+	confidentiality and integrity of data. Because of this, private lines
+	are still needed to ensure availability.
+	
+**RAS**	
+	- VPN can be done by means of tunnelling and encryption.
+	- A remote access service (RAS) is any combination of hardware and software to 
+	enable the remote access tools or information that typically reside on a 
+	network of IT devices.
+	- See github
+	
+**Site to Site VPN**
+	- See github
