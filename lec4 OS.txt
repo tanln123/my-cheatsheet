@@ -1,0 +1,63 @@
+1. What are the main tasks of an Operating System and how do they relate to security?
+	- Hide complicated details from users and applications which otherwise had to be dealt with
+	- Provide Virtual Machine which is much easier to use 
+	- Allocate resources to different users, processes.
+	
+2. Explain how the access control mechanisms implemented by an Operating System can be
+circumvented by an attacker and in which cases it can be enforced.
+	- use administrator privilege to access other individual's information in the organization
+
+3. Explain Linux’s access control mechanism in detail.
+	- Each file has permissions for 3 different types of users
+		- owner
+		- in the same group
+		- others
+
+4. The ls-l command returns the following output:
+		drwxr-xr-x 2 max staff 4096 Mar 27 12:15 test
+   Explain each of the fields.
+	+ d- : this is a directory
+	+ rwxr-xr-x : the owner has the read write execute permissions
+				  the user in the group which the file belongs to has read and execute permissions
+				  the other users has read and execute permissions
+	+ 2 : number of hard links point to the directory
+	+ max : username
+	+ staff : group name
+	+ 4096 : size of directory (bytes)
+	+ Mar 27 12:15 : Date and time
+	+ test: file name
+	
+5. Study the man pages for the commands
+	- chmod: change permissions of the file/directory for users 
+	- chown: change owner of the file 
+	- chgrp: change group of the file 
+	
+7. 
+	1. Which permissions are sufficient to execute a file containing a binary? Which permissions
+are sufficient to execute a shell script?
+	-> x
+
+	2. Which permissions are needed to copy a file?
+	-> source: r, destination: w x
+	
+	3. Which permissions are necessary to move a file?
+	-> source: w, destination: w x 
+	
+8. What happens is you try the command ls -l as a user
+	1. on a directory without having read-permissions?
+	-> permission denied
+	
+	2. on a directory without having write-permissions?
+	-> can read files and their details normally
+	
+	3. on a directory without having execute-permissions?
+	-> can only read file name, not their details
+	
+	4. Which permissions are sufficient necessary to change into an directory?
+	-> x 
+	
+9. 
+	- setfacl: set ACL of files and directory (ex: Gán quyền đọc , ghi, thi hành 
+	  cho user bao và group friend: setfacl -m user:bao:rwx,group:friends:rwx mydir )
+	  
+	- getfacl: see information of the ACL of the file

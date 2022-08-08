@@ -1,0 +1,60 @@
+2. Explain the differences between public key and symmetric encryption schemes. Also, explicate
+the respective advantages and disadvantages.
+	- Symmetric encryption schemes: key is identical for sender and receiver
+	-- Advantages:
+		+ faster
+		+ Because the key is not transmitted with the data, so if the connection is intercepted, the data is safe
+		+ Only the system which possesses the secret key can decrypt a message
+	--Disadvantages:
+		+ The secret key must be exchange before the message, and if the attacker can intercept the connection, then any message using that key to encrypt can be decrypted
+		+ Cannot provide digital signatures that cannot be repudiated
+	
+	- Public key encryption schemes: different pair of keys for every direction of communication
+	-- Advantage:
+		+ There is no need to exchange the private key (which help the recipient to read the encrypted message) so if the connection is intercepted, the message is still safe
+		+ Can provide digital signatures that cannot be repudiated
+	-- Disadvantage:
+		+ Slower
+		
+3. Define the term “hybrid encryption scheme” and outline the sequence thereof.
+	- Hybrid encryption scheme is achieved through the mix of symmetric and public key scheme.
+	- A wants to send the message to B, the symmetric key is decrypted using B's public 
+	  key encryption scheme, then B use its private key to decrypt the symmetric key, 
+	  after that, B use the symmetric key to encrypt the message sent by A
+	  
+4. Explain the term “mode of operation” and outline encryption and decryption for at 
+least two different modes.	 
+	- Mode of operation is the term used in block cipher which is a method of encrypting 
+	  data in blocks of same size to produce ciphertext using a cryptographic key and 
+	  algorithm. A mode of operation describes how to repeatedly apply a cipher's 
+	  single-block operation to securely transform amounts of data larger than a block.
+	- Used in CBC, CFM
+	
+5. Explain what conditions must be met for conducting a brute force attack.
+	- Has the plaintext
+	- Has something to check the result after brute force, if nothing can 
+	  be used for checking the result then the real plaintext can not be known.
+	- The length of the key is smaller than the length of the plaintext.
+
+7. Explain how One Time Pads operate and explain why a messace encrypted by this method
+cannot be recovered without knowing the used encryption key.
+	- The one time pad is randomly generated sequence of bits that has the same 
+	  length with the plaintext and then every bit of the OTP is XOR-ed with every bit 
+	  of the plaintext
+	- Without knowing the used encryption key: All the letters in the key are 
+	  uniformly distributed -> no specific pattern -> cannot do the statistic
+	  analysis -> impossible to get the correct key
+	  
+8. Explain how Electonic Code Book (ECB) operates and explain advantages and disadvantages
+of this method. Also, explain under which circumstances ECB can be used and when not.
+	- In Electronic Code Block, parts of a plaintext are grouped into plaintext blocks 
+	of same size. Each of these blocks is encrypted with a key using a encryption 
+	method, these blocks then form a ciphertext for given plaintext. 
+	Similarly, the ciphertext can be decrypted by being grouped into multiple 
+	ciphertext blocks of same size initially. Each of these blocks is decrypted with 
+	the key used for encryption and the decryption method equivalent to the 
+	encryption method. These blocks then form the plaintext at first.
+
+	- This method should be used when we focus more on performance because of its 
+	simplicity, however, it is not secure since it uses same encryption key for 
+	every block encryption.

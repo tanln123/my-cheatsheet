@@ -1,0 +1,28 @@
+1. Define IT security
+	- Protection against unauthorized access and unauthorized modification and 
+	  availability of information system services for legitimate users, 
+	- including measures to thwart, discover and log threats. 
+	- Protection against unauthorized access must be ensured during storage, 
+	  processing or in transit
+
+2. Aims of IT Security
+	- Confidentiality: protection against unauthorized access
+	- Integrity: protection against unauthorized modification
+	- Availability: resources and services are available for legitimate users
+	- Authentication: unambiguous identification of sender of information or a communication peer
+	- Nonrepudiation: Ability to prove that a message was sent and by whom to a third party not involved
+	  in communication
+	- Authorization: access to resources is limited for a certain group of (authorized) users
+
+3. What are passive and active attacks and why is the distinction between them helpful in
+practice?
+	- Passive attacks: attacker does not actively participate, hard to discover
+	- Active attacks: attacker actively participate in manipulating system or data, attacker often leave traces, prevention possible
+	- Distinction is helpful in determining the method to defend against the attack
+
+5. Explain the IT-Security process and its phases as outlined in the lecture.
+	- Plan, do, check, act
+	
+6. What is the difference between nonrepudiation and authenticity?
+	- Nonrepudiation: ability to prove the message was sent and by whom to third party
+	- Authentication: unambiguous identification of sender of information or a communication peer

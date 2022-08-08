@@ -1,0 +1,70 @@
+1. Define the terms “Authenticity” and “Authentication” and explain possible factors for 
+authentication. Also, briefly describe what Two-Factor-Authentication is.
+	- Unambiguous identification of sender of information of a communication peer.
+	- What you are (biometry), what you know (password), what you have (token)
+	- 2-factor-authentication: provide multiple proof of identification to get the permission to access
+
+2. Name and explain on which points the security of password-based authentication schemes
+depends.
+	- The size of password domain, choice of password and password policies
+	- Security of strong password
+	- Security when entering/transmitting password
+	
+3. Discuss how secure passwords should be chosen.
+	- Long password, capital letters, special characters, numbers, dont use natural language
+
+5. Describe the sequence in a password-based challenge-response authentication and compare
+its security with sending the password directly either encrypted or unencrypted.
+	- Compare: Challenge-response authentication can defend against session replay 
+	attacks, in which an attacker listens to previous messages and resends them 
+	later to get the same credentials as the original message. Challenge-response 
+	systems defend against replay attacks, because each challenge and response is 
+	unique. An attacker monitoring credentials exchanges and then attempting to 
+	reuse credentials will not succeed in gaining access.
+
+6. Describe the terms “Token”, “Smart Card” and “Biometry” and explain their use for authentication.
+	- Token: a device that show digits that are randomly changed every period of time,
+	  can be calculated on the token with some cryptographic embedded in the token 
+	  which is not easy to extracted
+	- Smart card: card that is auth by prove themselves to the card reader that they are really presented by means of cryptography
+	- Biometry: physical properties of a person. To prove that you are really you.  
+	
+8. Describe what a digital signature is and how it operates. Also describe how hash 
+functions are used in digital signatures.
+	- A process that guarantees that the contents of a message haven't been altered 
+	in transit. Sender signs message with private key. Public key is used for 
+	validation.
+	- Hash function: transforming data of any size into a fixed size. Hash function 
+	will generate unique digital fingerprint. Alice writes a message to Bob, A will 
+	hash the message, and then combines the hash value with her private key to 
+	generate a digital signature.
+	
+9. Explain in detail format, composition and use of certificates. Also describe “Certificate Authorities”,
+“Root-CA” and “Certificate Revocation”.
+
+	- Format: Bundle of Information of the owner of public key, along with public 
+	key, signature of certificate authority (also info about CA).
+
+	- Certificate authority: take the certificate request which consist of info of 
+	the entity (user, web server, ...) along with it's public key, and then it check 
+	that this public key is truly belong to that entity. Then CA will sign this 
+	certificate with it's private key (compute the hash, then encrypt the hash with 
+	private key)
+
+	- Certificate: say B, might not know A but B know its CA and B already had the 
+	public key of that CA, so B can check that whether the signature is ok or not. 
+	So if B trust this CA, then B can know the public key of A.
+
+	- Root-CA: CA sign its own certificate
+
+	- Certificate revocation: certificate that is no longer valid because that have 
+	been withdrawn
+	
+10. Discuss advantages and disadvantages of using cerfiticates and CAs.
+	- Advantages: public, so anyone can check the validity of an entity.
+	- Disadvantages:
+		+ Trustworthy only given if the root CA and other CA involved in the process 
+		are trustworthy
+		+ CA is compromised and still issuing certificate which might not belong to 
+		valid institution
+		+ Revocation is problematic because sometime this is not checked.
